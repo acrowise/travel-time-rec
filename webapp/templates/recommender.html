@@ -1,0 +1,143 @@
+<html>
+  <head>
+    <!--link rel="stylesheet" href="/static/mpg.css" / -->
+    <title>Travel Destination Recommender</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/recommender.css" />
+  </head>
+  <body>
+    <div class="container">
+
+      <!-- header -->
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand awesome1" href="#">Travel Rec</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link awesome1" href="/signin">Sign In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link awesome1" href="#about">About Travel Rec</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link awesome1" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+      <!-- body -->
+
+      <div class="row">
+        <div class="col">
+          <h1 class="display-4 awesome1">Travel Destination Recommender</h1>
+        </div>
+      </div>
+
+      <!-- body2 -->
+      <header class="intro-header">
+        <div class="container awesome2">
+          <div class="intro-message">
+            <h2>Travel Rec</h1>
+            <h3>Your personal travel destination finder</h3>
+            <h5>Ready to find the next destination? <br> Let's find your perfect match</h5>
+            <hr class="intro-divider">
+            <ul class="list-inline intro-social-buttons">
+              <li class="list-inline-item">
+                <a href="/signin" class="btn btn-secondary btn-lg">
+                  <span class="network-name">  Sign in   </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="/predict" class="btn btn-secondary btn-lg">
+                  <span class="network-name">Match with similar user</span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="/quiz" class="btn btn-secondary btn-lg">
+                  <span class="network-name">Take a quiz</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- form -->
+
+      <!-- example -->
+      <div class="row">
+        <div class="col">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="cityselector"> City Type Options</label>
+            </div>
+            <select class="custom-select" id="cityselector">
+              <option selected>Choose...</option>
+              <option value="0">Dynamic</option>
+              <option value="1">Family</option>
+              <option value="2">Nature</option>
+              <option value="3">Beach</option>
+              <option value="4">Random</option>
+            </select>
+          </div>
+        </div>
+        <div class="col">
+          </div>
+          <div class="col">
+            </div>
+
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="userselector"> User Type Options</label>
+              </div>
+              <select class="custom-select" id="userselector">
+                <option selected>Choose...</option>
+                <option value="10">User 1</option>
+                <option value="20">User 2</option>
+                <option value="30">User 3</option>
+                <option value="40">User 4</option>
+                <option value="50">User 5</option>
+              </select>
+            </div>
+          </div>
+          <div class="col">
+            </div>
+            <div class="col">
+              </div>
+            </div>
+          <div class="row">
+                <div class="col">
+            <button id="inference" type="submit" class="btn btn-primary">Where to next!</button>
+            </div>
+
+            <div class="col">
+              </div>
+              <div class="col">
+                </div>
+            </div>
+
+
+      </div>
+    </div>
+
+
+
+
+
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+      <script src="static/recommender.js"></script>
+  </body>
+</html>
