@@ -20,14 +20,26 @@ def recommender():
     return render_template('recommender.html')
 
 
+model = pickle.load(open('../src/samp.p', 'rb'))
+
 @app.route('/inference', methods = ['POST'])
 def inference():
-    # m = pikle.load('model.1')
-    # m.predict([3,  4])
+
+
+    model.predict([3,  4])
     req = request.get_json()
     print('req:', req)
+
+    city_id, user_id = req['city'], req['user']
+    prediction = model.predict([[city_id, user_id]])
     # call model and do predictions and send back result
-    return jsonify({"kammy": "hello"})
+
+    return jsonify({'city':city_id, 'user': user_id,
+                    'prediction': (prediction[0], prediction[1])})
+
+
+
+    #return jsonify({"kammy": "hello"})
     # city_type, gender, age, style = req['CityType'], req['gender'], req['age'], req['style']
     # prediction = model.predict([[city_type, gender, age, style]])
     # return jsonify({'city_type':city_type, 'gender': gender, 'age': age, 'style': style, 'prediction': prediction[0]})
