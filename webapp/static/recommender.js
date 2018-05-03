@@ -18,7 +18,7 @@ $(document).ready(function(){
       city,
       user
     };
-
+    console.log(data)
     // browser sending the message to server who is listening
     const response = await $.ajax('/inference', {
       data: JSON.stringify(data),   // turning data into string
@@ -27,7 +27,7 @@ $(document).ready(function(){
     });
 
     console.log('response', response);
-  //   $('#recommender').val(response.prediction);
+    $('#recommender').val(response.prediction);
   //
   });
 });
