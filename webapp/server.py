@@ -36,7 +36,7 @@ def inference():
     # call model and do predictions and send back result
 
     return jsonify({'city': city_id, 'user': user_id,
-                    'prediction': prediction[0]})
+                    'predictions': {'pred1' : prediction[0], 'pred2' :prediction[1]}})
 
 
 
