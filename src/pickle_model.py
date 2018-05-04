@@ -80,9 +80,7 @@ travel_m = main_model_no_spark.TravelModelMain(user_df, item_df)
 
 travel_m.fit(util_matrix, invert_feature, city_temp, content, reviews)
 
+pickle.dump(travel_m, open('samp.p', 'wb'))
+
 pred = travel_m.predict(4, 30)
-
 print(pred)
-
-
-#pickle.dump(travel_m, open('samp.p', 'wb'))
