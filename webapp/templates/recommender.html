@@ -77,15 +77,15 @@
         <div class="col">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <label class="input-group-text" for="cityselector"> City Type Options</label>
+              <label class="input-group-text" for="cityselector">    City Type Options    </label>
             </div>
             <select class="custom-select" id="cityselector">
               <option selected>Choose...</option>
-              <option value="0">Dynamic</option>
-              <option value="1">Family</option>
-              <option value="2">Nature</option>
-              <option value="3">Beach</option>
-              <option value="4">Random</option>
+              <option value="0">Friendly cities</option>
+              <option value="1">Dynamic, popular cities</option>
+              <option value="2">Nature, Hiking, Park</option>
+              <option value="3">Lovely small towns</option>
+              <option value="4">Family, Kid</option>
             </select>
           </div>
         </div>
@@ -99,15 +99,15 @@
           <div class="col">
             <div class="input-group mb-3">
               <div class="input-group-prepend">
-                <label class="input-group-text" for="userselector"> User Type Options</label>
+                <label class="input-group-text" for="userselector"> Traveler Type Options</label>
               </div>
               <select class="custom-select" id="userselector">
                 <option selected>Choose...</option>
-                <option value="10">User 10</option>
-                <option value="20">User 20</option>
-                <option value="30">User 30</option>
-                <option value="40">User 40</option>
-                <option value="50">User 50</option>
+                <option value="183">Female, age 25-34, Beach Goer, Nightlife Seeker, Urban Explorer</option>
+                <option value="41">Male, age 35-49 ,Like a Local, Thrill Seeker, Nightlife Seeker</option>
+                <option value="12">Female, age 25-34 , Luxury Traveller, Peace and Quiet Seeker, Shopping Fanatic,Trendsetter</option>
+                <option value="151">Male, age 50-64,Family Hoilday Maker, History Buff, Thrifty Traveller</option>
+                <option value="30">Female, age 50-64, Beach Goer, History Buff, Nature Lover,Vegetarian</option>
               </select>
             </div>
           </div>
@@ -119,10 +119,12 @@
           <div class="row">
                 <div class="col">
                   <!-- Button trigger modal -->
-                  <button id="inference" type="submit" class="btn btn-primary" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Where to next!</button>
+                  <button id="inference" type="submit" class="btn btn-primary" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> Where to next!  </button>
                 </div>
 
-            <div class="col">
+                <div class="col">
+                  <input id="recommender1" type="text" readonly />
+                  <img id="city-url" class="img-thumbnail" src="http://via.placeholder.com/350x150" />
               <!-- Modal -->
               <!-- <class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -133,9 +135,9 @@
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
-                    <div class="modal-body"> -->
+                    <div class="modal-body">
                       <input id="recommender" type="text" readonly />
-                    <!-- </div>
+                    </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
@@ -144,6 +146,7 @@
 
               </div>
               <div class="col">
+                <input id="recommender2" type="text" readonly />
                 </div>
             </div>
 
@@ -156,8 +159,8 @@
 
 
       <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
       <script src="static/recommender.js"></script>
   </body>
 </html>
