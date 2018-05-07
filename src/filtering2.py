@@ -97,27 +97,11 @@ def age_gender_dummie(feature_temp):
 
     return feature_temp
 
-# def combine_all_dummies(left, right):
-#
-#     feature_temp = left.join(right)
-#     feature_final = feature_temp.drop(['travelStyle', \
-#                                        'new_travel', \
-#                                        'gender_male', \
-#                                        '60+ Traveler', \
-#                                        'username'], axis =1)
-#
-#     feature_final.reset_index(drop=True, inplace=True)
-#
-#
-#     return feature_final
+
 
 def combine_all_dummies(user_df, style_df, personality_df):
 
-    print('***size******', style_df.isnull().sum())
-    print('***size******', personality_df.isnull().sum())
     feature_temp = user_df.join(style_df)
-    #print('=======fjdslkjfsljkfkl======',feature_temp1.isnull().sum())
-
 
     feature_final = feature_temp.drop(['travelStyle', \
                                        'new_travel', \
@@ -127,10 +111,8 @@ def combine_all_dummies(user_df, style_df, personality_df):
 
     feature_final.reset_index(drop=True, inplace=True)
     feature_final1 = feature_final.join(personality_df)
-    print('=======fjdslkjfsljkfkl======',feature_final1.isnull().sum())
-    #print('===index====', feature_final.isnull().sum())
 
-    return feature_final1 
+    return feature_final1
 
 
 
@@ -150,15 +132,11 @@ def mapping_personality(df):
 
     new_df = df.copy()
     for i in range(len((df.columns))):
-        #print(df.iloc[:, i])
         percentile = np.percentile(df.iloc[:, i], 50)
 
-        new_items = np.array([True if item > percentile else False for item in df.iloc[:, i]])
-        #new_items_arr = np.array([True if item > percentile else False for item in df.iloc[:, i]])
-        #new_items = new_items_arr.astype('uint8')
+        new_items = np.array([True if item >= percentile else False for item in df.iloc[:, i]])
         new_df[str(i)]= new_items
 
-    #print(new_df.head(10))
     return new_df
 
 
@@ -166,11 +144,7 @@ def cleaning_personality_df(df):
 
 
     new_df = df.drop(['open', 'cons', 'extra', 'agree','neuro'], axis=1)
-    #print(new_df.head(10))
     new_df.columns = ['open', 'cons', 'extra', 'agree','neuro']
-    #print(new_df.open[0].dtype)
-    print('+++++++personality_df++++++++++')
-    #print(new_df.head(190))
 
     return new_df
 

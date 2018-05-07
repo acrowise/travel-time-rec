@@ -11,9 +11,6 @@ model = pickle.load(open('/Users/kammy/Desktop/galvanize/travel-time-rec/samp.p'
 
 app = Flask(__name__)
 
-#model = pickle.load(open('linreg.p', 'rb'))
-
-
 
 
 @app.route('/', methods = ['GET'])

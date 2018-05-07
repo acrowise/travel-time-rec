@@ -80,7 +80,7 @@
               <label class="input-group-text" for="cityselector">    City Type Options    </label>
             </div>
             <select class="custom-select" id="cityselector">
-              <option selected>Choose...</option>
+              <option selected>Choose one city type...</option>
               <option value="0">Dynamic cities, bars, night, amazing</option>
               <option value="1">Popular cities, history, museums, enjoyable</option>
               <option value="2">Family-oriented cities, kids, shopping, lovely</option>
@@ -91,8 +91,7 @@
         </div>
         <div class="col">
           </div>
-          <div class="col">
-            </div>
+
 
         </div>
         <div class="row">
@@ -102,19 +101,21 @@
                 <label class="input-group-text" for="userselector"> Traveler Type Options</label>
               </div>
               <select class="custom-select" id="userselector">
-                <option selected>Choose...</option>
-                <option value="168">Female, age 25-34, Beach Goer, Nightlife Seeker, Urban Explorer</option>
-                <option value="38">Male, age 35-49 ,Like a Local, Thrill Seeker, Nightlife Seeker</option>
-                <option value="12">Female, age 25-34 , Luxury Traveller, Peace and Quiet Seeker, Shopping Fanatic,Trendsetter, Urban Explorer</option>
-                <option value="140">Male, age 50-64,Family Hoilday Maker, History Buff, Thrifty Traveller</option>
-                <option value="27">Female, age 50-64, Beach Goer, History Buff, Nature Lover,Vegetarian</option>
+                <option selected>Choose one user...</option>
+                <option value="168">Female, age 25-34, Conscientiousness, Extraversion, Agreeableness, Beach Goer,
+                                    Nightlife Seeker, Urban Explorer</option>
+                <option value="38">Male, age 35-49 , Openness, Like a Local, Thrill Seeker, Nightlife Seeker</option>
+                <option value="12">Female, age 25-34, Openness, Extraversion, Agreeableness, Luxury Traveller,
+                                   Peace and Quiet Seeker, Shopping Fanatic,Trendsetter, Urban Explorer</option>
+                <option value="140">Male, age 50-64, Openness, Conscientiousness, Extraversion, Agreeableness,
+                                    Family Hoilday Maker, History Buff, Thrifty Traveller</option>
+                <option value="27">Female, age 50-64, Neuroticism, Beach Goer, History Buff, Nature Lover, Vegetarian</option>
               </select>
             </div>
           </div>
           <div class="col">
             </div>
-            <div class="col">
-              </div>
+
             </div>
           <div class="row">
                 <div class="col">
@@ -124,7 +125,9 @@
 
                 <div class="col">
                   <input id="recommender1" type="text" readonly />
-                  <img id="city-url" class="img-thumbnail" src="http://via.placeholder.com/350x150" />
+                  <!-- <img id="city-url" class="img-thumbnail" src="http://via.placeholder.com/350x150" /> -->
+                  <input id="city1-country" />
+
               <!-- Modal -->
               <!-- <class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -147,6 +150,7 @@
               </div>
               <div class="col">
                 <input id="recommender2" type="text" readonly />
+                <input id="city2-country" />
                 </div>
             </div>
 

@@ -139,8 +139,9 @@ class TravelModelMain():
         filtered_user = util_matrix[util_matrix.city_id == cid]
         #print(user_matrix.head(10))
         #print(filtered_user)
+
         for user in filtered_user.user_id.values:
-            #print('***type******', user_matrix[udi])
+
             #print('***type******', user_matrix[user])
             # import pdb; pdb.set_trace()
             sim_score = jaccard_similarity_score(list(user_matrix[udi].values), list(user_matrix[user].values))
@@ -148,7 +149,7 @@ class TravelModelMain():
             overall_rating += sim_score * rating
             overall_sim +=sim_score
 
-
+        print('***type******', list(user_matrix[udi].values))
         final_score = overall_rating / overall_sim
 
         return final_score
