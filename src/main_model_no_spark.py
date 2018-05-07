@@ -3,7 +3,7 @@
 import pandas as pd
 import numpy as np
 import pickle
-import filtering as filter
+import filtering2 as filter
 # cluster
 
 from sklearn.cluster import KMeans
@@ -29,16 +29,27 @@ class TravelModelMain():
         Transform texts to Tf-Idf coordinates and cluster texts using K-Means
         """
         #my_additional_stop_words = ['acute', 'good', 'great', 'really', 'just', 'nice', 'like', 'day']
-        my_additional_stop_words = ['acute', 'good', 'great', 'really', 'just', 'nice',
-                                    'like', 'day', 'beautiful', 'visit', 'time', 'don',
-                                    'did', 'place', 'didn', 'did', 'tour', 'sydney','pm',
-                                    'lot', '00', 'inside', 'istanbul', 'doesn','going',
-                                    'right', '15']
+        # my_additional_stop_words = ['acute', 'good', 'great', 'really', 'just', 'nice',
+        #                             'like', 'day', 'beautiful', 'visit', 'time', 'don',
+        #                             'did', 'place', 'didn', 'did', 'tour', 'sydney','pm',
+        #                             'lot', '00', 'inside', 'istanbul', 'doesn','going',
+        #                             'right', '15']
+        my_additional_stop_words = ['acute', 'good', 'great', 'really',
+                                    'just', 'nice', 'like', 'day', 'ok',
+                                    'visit', 'did', 'don', 'place', 'london',
+                                    'paris','san', 'sydney', 'dubai','diego',
+                                    'didn', 'fun', 'venice','boston', 'chicago',
+                                    'tour', 'went', 'time', 'vegas', 'museum',
+                                    'disney', 'barcelona', 'st', 'pm', 'sf',
+                                    'worth', 'beautiful', 'la', 'interesting',
+                                    'inside', 'outside', 'experience', 'singapore',
+                                    'lot', 'free', 'istanbul', 'food', 'people',
+                                    'way']
         stop_words = text.ENGLISH_STOP_WORDS.union(my_additional_stop_words)
 
 
         vectorizer = TfidfVectorizer(stop_words= stop_words,
-                                     max_features = 400,
+                                     max_features = 500,
                                      lowercase=True)
 
         tfidf_model = vectorizer.fit_transform(corpus)
@@ -53,14 +64,14 @@ class TravelModelMain():
         Cluster vecotirzed reviews and create k books a data frame relating the
         k label to the book id
         """
-        kmeans = KMeans(5, random_state=2929292).fit(vectors)
+        kmeans = KMeans(4, random_state=10000000).fit(vectors)
         k_books = pd.DataFrame(list(zip(list(kmeans.labels_),
                                     list(reviews.index))),
                                     columns=['cluster_k', 'city_index'])
 
         ''' added code to print centriod vocab - Print the top n words from all centroids vocab
         '''
-        n = 10
+        n = 15
         centroids = kmeans.cluster_centers_
         for ind, c in enumerate(centroids):
             #print(ind)
@@ -68,6 +79,7 @@ class TravelModelMain():
             #print([cols[i] for i in indices])
             #print("=="*20)
 
+        #print(k_books.head(190))
         return k_books
 
 
@@ -76,7 +88,10 @@ class TravelModelMain():
 
         self.utility_matrix = utility_matrix
         self.invert_feature = invert_feature
+        #print('=========invert_feature=========', invert_feature.tail(10))
+        print()
         self.city_temp = city_temp
+        #print('=====city_temp=======' ,city_temp.head(80))
 
         vector, cols = self.cluster_texts(content)
         self.cluster_df = self.cluster(vector, cols, reviews)
@@ -122,9 +137,13 @@ class TravelModelMain():
         final_score = 0
 
         filtered_user = util_matrix[util_matrix.city_id == cid]
+        #print(user_matrix.head(10))
         #print(filtered_user)
         for user in filtered_user.user_id.values:
-            sim_score = jaccard_similarity_score(user_matrix[udi], user_matrix[user])
+            #print('***type******', user_matrix[udi])
+            #print('***type******', user_matrix[user])
+            # import pdb; pdb.set_trace()
+            sim_score = jaccard_similarity_score(list(user_matrix[udi].values), list(user_matrix[user].values))
             rating = filtered_user[(filtered_user.user_id == user)].rating.values[0]
             overall_rating += sim_score * rating
             overall_sim +=sim_score
@@ -136,21 +155,18 @@ class TravelModelMain():
 
 
     def overall_rating(self, als_score ,jacc_sim_score):
-        alpha = 0.5
-        beta = 0.5
+        alpha = 0.3
+        beta = 0.7
         if als_score == 0:
             final_score = jacc_sim_score
         else:
-            final_score = 0.5 * jacc_sim_score + 0.5 * als_score
+            final_score = alpha * jacc_sim_score + beta * als_score
 
         return final_score
 
 
 
     def top_list(self, final_rating_lst, selected_df):
-
-        print("length of final_rating_list",len(final_rating_lst))
-        print(selected_df)
 
         top_lst = sorted(final_rating_lst, reverse = True)[:3]
 
@@ -161,5 +177,4 @@ class TravelModelMain():
             rec_city = row.taObjectCity.values
             rec_items.append(rec_city[0])
 
-        #return rec_items[0],
         return rec_items

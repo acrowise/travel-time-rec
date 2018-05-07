@@ -23,7 +23,6 @@ def unique_city_id(input_df):
     city_dict_df = pd.DataFrame(input_df.taObjectCity.unique(), columns = ['taObjectCity'])
     city_temp = city_dict_df.reset_index()
     city_temp = city_temp.rename(columns = {'index':'city_id'})
-
     return city_temp
 
 

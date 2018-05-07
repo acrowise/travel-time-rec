@@ -6,7 +6,7 @@ import os.path
 sys.path.append('/Users/kammy/Desktop/galvanize/travel-time-rec/src')
 import main_model_no_spark
 
-model = pickle.load(open('../src/samp.p', 'rb'))
+model = pickle.load(open('/Users/kammy/Desktop/galvanize/travel-time-rec/samp.p', 'rb'))
 
 
 app = Flask(__name__)

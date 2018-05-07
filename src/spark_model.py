@@ -11,8 +11,8 @@ from pyspark.sql import SQLContext, Row
 
 # private modules
 import loader as load
-import filtering as filter
-import general as gn
+import filtering2 as filter
+#import general as gn
 import als_model_prep as prep
 
 
@@ -59,10 +59,10 @@ def ALS_model(spark_df):
 
 if __name__ == '__main__':
     # loading dataframe
-    reviews_file = '../data/reviews_32618_for_1098_users_with_location.xlsx'
-    user_file = '../data/users_full_7034.xlsx'
-    personality_file = '../data/pers_scores_1098.xlsx'
-    article_file = '../data/articles_159.xlsx'
+    reviews_file = '/Users/kammy/Desktop/galvanize/travel-time-rec/data/reviews_32618_for_1098_users_with_location.xlsx'
+    user_file = '/Users/kammy/Desktop/galvanize/travel-time-rec/data/users_full_7034.xlsx'
+    personality_file = '/Users/kammy/Desktop/galvanize/travel-time-rec/data/pers_scores_1098.xlsx'
+    article_file = '/Users/kammy/Desktop/galvanize/travel-time-rec/data/articles_159.xlsx'
 
     u_df = load.load_user_profile(user_file)
     #df2 = load.load_articles(article_file)
@@ -75,7 +75,8 @@ if __name__ == '__main__':
     r_filtered = filter.filter_review(r_df)
     merge_filtered = filter.merge_review_and_user(u_filtered, r_filtered)
     merge_filtered = filter.foreign_review_filter(merge_filtered)
-    pop_city_lst = gn.popular_city_list(merge_filtered)
+    pop_city_lst = filter.popular_city_list(merge_filtered)
+    #pop_city_lst = gn.popular_city_list(merge_filtered)
     final_df = filter.filter_final(merge_filtered, pop_city_lst)
 
 
