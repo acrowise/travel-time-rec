@@ -62,7 +62,7 @@ feature_temp = filter.travel_style(feature_temp_0)
 style_df = filter.travel_matrix(feature_temp)
 feature_temp_1 = filter.age_gender_dummie(feature_temp_0)
 invert_feature = filter.combine_all_dummies(feature_temp_1, style_df, c_personality_matrix_df).T
-#print(invert_feature.head(20))
+
 
 
 
@@ -97,5 +97,18 @@ travel_m.fit(util_matrix, invert_feature, city_temp, content, reviews)
 
 pickle.dump(travel_m, open('samp.p', 'wb'))
 
-pred = travel_m.predict(0, 168)
-print(pred)
+# pred1 = travel_m.predict(3, 168)
+# print(pred1)
+#False, True, True, True, False
+#print('='* 6)
+# pred2 = travel_m.predict(0, 38)
+# print(pred2)
+# True, False, False, False, False
+# pred3 = travel_m.predict(3, 12)
+# True, False, True, True, False
+# print('='* 6)
+# pred4 = travel_m.predict(3, 140)
+# True, True, True, True, False
+# print('='* 6)
+# pred5 = travel_m.predict(3, 27)
+# False, False, False, False, True]

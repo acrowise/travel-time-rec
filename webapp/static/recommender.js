@@ -68,10 +68,6 @@ var cities = {
     country: 'Russia',
     population: 35000 },
 
-  "Nashville": {
-    country: 'Tennessee, U.S.',
-    population: 35000 },
-
   "London": {
     country: 'England',
     population: 35000 },
@@ -83,12 +79,28 @@ var cities = {
   "Los Angeles": {
     country: 'California, U.S',
     population: 35000 },
+
   "Washington DC": {
     country: 'Washington DC, U.S',
     population: 35000 },
+
   "Honolulu": {
     country: 'Hawaii, U.S',
     population: 35000 },
+
+  "Toronto": {
+    country: 'Canada',
+    population: 35000 },
+
+
+  "Budapest": {
+    country: 'Hungary',
+    population: 35000 },
+
+
+  "Boston": {
+    country: 'Massachusetts, U.S.',
+      population: 35000 }
 
 };
 

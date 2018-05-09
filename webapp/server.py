@@ -15,12 +15,12 @@ app = Flask(__name__)
 
 @app.route('/', methods = ['GET'])
 def home():
-    return '<h1>Welcome to TravelX!</h1>'
-
-
-@app.route('/recommender', methods = ['GET'])
-def recommender():
     return render_template('recommender.html')
+
+
+# @app.route('/recommender', methods = ['GET'])
+# def recommender():
+#     return render_template('recommender.html')
 
 
 @app.route('/inference', methods = ['POST'])
