@@ -35,7 +35,7 @@ Besides accuracy, I also want to personalize the recommendation. Therefore, I us
 
 # Workflow
 
-
+![workflow.png](images/workflow.png)
 
 
 # Data
