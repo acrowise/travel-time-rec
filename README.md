@@ -1,16 +1,10 @@
 # Travel Time: Travel Destination Recommender
-* Please switch to dev branch to run the model
-
-In the main folder,
-run:
-  * 1) src/spark_model.py
-  * 2) src/pickle_model.py
-  * 3) webapp/server.py
 
 # Overview/ Motivation
 Traveling is always fun and relaxing. However, going to visit every single city in the world would be infeasible. How do we know which city will be a best match for us to travel to?
 TraveTime is a travel desitination recommender that match the user's personality, age, and travel style to a user selected type of city. Whether, it's a solo trip in a dynamic environment or a fun family vacation, we will always find your best match!
 
+![workflow.png](images/web_frontpage.png)
 
 # Recommender System
 The Youtube recommendations videos on the left side of the screen, or the next suggested movie in your Netflix account. They are a product of recommender system based on user and item data.
@@ -72,3 +66,13 @@ Three Tripadvisor data sets from ResearchGate.
 * HTML
 * CSS
 * JavaScript
+
+# Testing
+* Please switch to dev branch to run the model
+
+In the main folder,
+run:
+  * 1) src/spark_model.py
+  * 2) src/pickle_model.py
+  * 3) webapp/server.py
+
