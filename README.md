@@ -1,5 +1,5 @@
 # Travel Time: Travel Destination Recommender
-* Please switch to dev branch to clone the repo
+* Please switch to dev branch to run the model
 
 In the main folder,
 run:
