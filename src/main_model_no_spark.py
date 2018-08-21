@@ -98,7 +98,10 @@ class TravelModelMain():
             user_i = user_id
             item = city
 
-            als_score = np.dot(self.user_df.features[user_i], self.item_df.features[item])
+            user_arr =
+            city_arr = self.item_df[self.item_df.id == item].features.as_matrix()[0]
+
+            als_score = np.dot(user_arr, city_arr)
 
             final_sim_score = self.jaccard_sim_score(user_i, item, self.invert_feature, self.utility_matrix)
             final_rating = self.overall_rating(als_score, final_sim_score)
