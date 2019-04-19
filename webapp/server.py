@@ -2,28 +2,25 @@ import sys
 import pickle
 from flask import Flask, render_template, request, jsonify, Response
 import pandas as pd
-import os.path
-sys.path.append('/Users/kammy/Desktop/galvanize/travel-time-rec/src')
+import os
+sys.path.insert(0, 'src')
 import main_model_no_spark
 
-model = pickle.load(open('../src/samp.p', 'rb'))
+model = pickle.load(open('samp.p', 'rb'))
 
 
 app = Flask(__name__)
-
-#model = pickle.load(open('linreg.p', 'rb'))
-
 
 
 
 @app.route('/', methods = ['GET'])
 def home():
-    return '<h1>Welcome to TravelX!</h1>'
-
-
-@app.route('/recommender', methods = ['GET'])
-def recommender():
     return render_template('recommender.html')
+
+
+# @app.route('/recommender', methods = ['GET'])
+# def recommender():
+#     return render_template('recommender.html')
 
 
 @app.route('/inference', methods = ['POST'])
