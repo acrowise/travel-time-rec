@@ -73,7 +73,7 @@ if __name__ == '__main__':
     merge_filtered = filter.foreign_review_filter(merge_filtered)
     pop_city_lst = filter.popular_city_list(merge_filtered)
     final_df = filter.filter_final(merge_filtered, pop_city_lst)
-    print("here ***"*10)
+
 
     # prep df for spark rdd
     als_temp_df = prep.prep_als_df(final_df)
@@ -83,9 +83,9 @@ if __name__ == '__main__':
     result_df = prep.merging_unique_user_city(als_temp_df, user_temp, city_temp)
     # with user_id, city_id, rating - aggregated by cityid and userid
     util_matrix = prep.utility_matrix(result_df)
-    print("done matrix"*10)
+
 
     spark_df = spark_rdd(util_matrix)
     ALS_model(spark_df)
 
-    print("done model"*10)
+    print("DONE MODELING! "*5)
