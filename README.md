@@ -3,7 +3,7 @@
 - [Overview](#Overview)
 - [Data](#Data)
 - [Hybrid Recommender](#Hybrid-Recommender)
-- [Run the model yourself!](#Testing)
+- [Run the model yourself!](#Run-the-model-yourself!)
 - [Technical explanations](#Technical-explanations)
 
 ![frontpage](https://github.com/kammybdeng/travel-time-rec/blob/master/images/web_frontpage.png)
@@ -30,15 +30,15 @@ Matches your personality similarity with other travelers
 Matches your traveling and rating preferences and with other travelers
 
 
-# Testing
+# Run the model yourself!
 To run the model and the website in your local computer, you can:
 
-  - **1) clone the repository to your folder**
-  then run these commends in your terminal:
+  **1) clone the repository to your folder**
 
-  - **2) python src/spark_model.py
-  - 3) python src/pickle_model.py
-  - 3) python webapp/server.py**
+  then run these commends in your terminal:
+  **2) python src/spark_model.py**
+  **3) python src/pickle_model.py**
+  **4) python webapp/server.py**
 
 
 ## Technical explanations
