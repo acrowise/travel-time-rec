@@ -40,8 +40,9 @@ Categorize the cities into four different groups
 # Get your own recommendation!
 To run the model and the website in your local computer, you can:
 
-  - **1) clone the repository to your folder**
+  - **0) clone the repository to your folder**
 
+  - **1) prepare your environment with requirements.txt**
   then run these commands in your terminal:
 
   - **2) python src/spark_model.py**
