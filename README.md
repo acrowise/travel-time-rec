@@ -2,33 +2,40 @@
 
 - [Overview](#Overview)
 - [Data](#Data)
-- [Hybrid Recommender](#Hybrid-Recommender)
+- [Model](#Model)
 - [Get your own recommendation!](#Get-your-own-recommendation)
 - [Technical details](#Technical-explanations)
 
 ![frontpage](https://github.com/kammybdeng/travel-time-rec/blob/master/images/web_frontpage.png)
 
 # Overview
-There are tons of great cities around the world, but it's quite hard for most people to go to all of them. I always wonder if there are ways to narrow down the choices to a few places. Thus, I decided to build a travel destination recommender, TravelTime, that will compare new traveler's personality, age, and travel style to other traveler and select the most favorable travel destination for travelers!
+There are tons of great cities around the world, but it's quite difficult for most people to go to all of these well known places. So, I always wonder if there are ways to narrow down the choices. Thus, I decided to build a travel destination recommender, TravelTime, **that will compare new traveler's personality, age, and travel style to other travelers and recommend the most favorable travel destinations for travelers**!
 
 # Data
 The data used in this project is collected from [Alexander Roshchina](https://www.researchgate.net/publication/301543515_TripAdvisor_dataset_with_personality_scores)
 
 They are:
-1) Tripadvisor users' Big 5 personality scores
-2) Tripadvisor users' profiles (age, gender, travel style, Tripadvisor points, Tripadvisor traveler status, and etc.)
-3) Tripadvisor users' city text reviews and star ratings
+1) Tripadvisor users' **Big 5 personality scores**
+2) Tripadvisor **users' profiles** (age, gender, travel style, Tripadvisor points, Tripadvisor traveler status, and etc.)
+3) Tripadvisor users' city **text reviews and star ratings**
 
-
-# Hybrid Recommender
+# Model
+## Hybrid Recommender
 ![workflow.png](https://github.com/kammybdeng/travel-time-rec/blob/master/images/workflow.png)
 
-## Jaccard Similarity
+Like most of the recommenders, this model was trained with the dataset and will analyze new traveler's personality and preferences and find the most matching old users's reviews and ratings, and recommend the matching cities.
+In order to provide a more specific recommendation, I also clustered the cities into four different groups.
+
+By answering the two questions on the webpage, **your preferred city type** and **your traveling style**, the model in the backend will generate two matching cities for the traveler.
+
+### Jaccard Similarity
 Matches your personality similarity with other travelers
 
-## Collaborative Filtering
+### Collaborative Filtering
 Matches your traveling and rating preferences and with other travelers
 
+### Clustering
+Categorize the cities into four different groups
 
 # Get your own recommendation!
 To run the model and the website in your local computer, you can:
@@ -43,6 +50,12 @@ To run the model and the website in your local computer, you can:
 
   - **4) python webapp/server.py**
 
+  in your browser:
+
+  - **5) copy and paste the local website link to your browser**
+
+  - **5) answer the two questions and see your result!**
+
 
 ## Technical details
 For people who want to learn more about how ALS Collaborative Filtering does.
@@ -55,7 +68,7 @@ In order to improve the accuracy of the ALS model. I decided to add in another u
 
 The final predicted rating of my model is an addition of the alpha times the ALS model and the beta times the user-user Jaccard similarity matrix.
 
-### 3. Clustering
+### 3. Kmeans clustering
 Besides accuracy, I also want to personalize the recommendation. Therefore, I used k-Means clustering on the vectorized TFIDF city reviews to create distinct city groups.
 
 ### 4. Travel Class Model
