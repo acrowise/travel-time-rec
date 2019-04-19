@@ -3,8 +3,8 @@
 - [Overview](#Overview)
 - [Data](#Data)
 - [Hybrid Recommender](#Hybrid-Recommender)
-- [Run the model yourself!](#Run-the-model-yourself)
-- [Technical explanations](#Technical-explanations)
+- [Get your own recommendation!](#Get-your-own-recommendation)
+- [Technical details](#Technical-explanations)
 
 ![frontpage](https://github.com/kammybdeng/travel-time-rec/blob/master/images/web_frontpage.png)
 
@@ -30,12 +30,12 @@ Matches your personality similarity with other travelers
 Matches your traveling and rating preferences and with other travelers
 
 
-# Run the model yourself
+# Get your own recommendation!
 To run the model and the website in your local computer, you can:
 
   - **1) clone the repository to your folder**
 
-  then run these commends in your terminal:
+  then run these commands in your terminal:
 
   - **2) python src/spark_model.py**
 
@@ -44,7 +44,7 @@ To run the model and the website in your local computer, you can:
   - **4) python webapp/server.py**
 
 
-## Technical explanations
+## Technical details
 For people who want to learn more about how ALS Collaborative Filtering does.
 
 ### 1. ALS Collaborative Filtering Recommender
@@ -58,5 +58,5 @@ The final predicted rating of my model is an addition of the alpha times the ALS
 ### 3. Clustering
 Besides accuracy, I also want to personalize the recommendation. Therefore, I used k-Means clustering on the vectorized TFIDF city reviews to create distinct city groups.
 
-# Travel Class Model
+### 4. Travel Class Model
 Finally, a class model is generated to combine the clusters and the city rating predictions together. The model is represented by the diagram below.
