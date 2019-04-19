@@ -1,19 +1,17 @@
 # Travel Time: Travel Destination Recommender
 
+- [Overview](#Overview)
+- [Data](#Data)
+- [Hybrid Recommender](#Hybrid-Recommender)
+- [Run the model yourself!](#Testing)
+- [Technical explanations](#Technical-explanations)
+
 ![frontpage](https://github.com/kammybdeng/travel-time-rec/blob/master/images/web_frontpage.png)
-
-[Overview](#Overview)
-[Data](#Data)
-[Hybrid Recommender](#Hybrid-Recommender)
-[Run the model yourself!](#Testing)
-[Technical explanations](#Technical-explanations)
-
 
 # Overview
 There are tons of great cities around the world, but it's quite hard for most people to go to all of them. I always wonder if there are ways to narrow down the choices to a few places. Thus, I decided to build a travel destination recommender, TravelTime, that will compare new traveler's personality, age, and travel style to other traveler and select the most favorable travel destination for travelers!
 
 # Data
-
 The data used in this project is collected from [Alexander Roshchina](https://www.researchgate.net/publication/301543515_TripAdvisor_dataset_with_personality_scores)
 
 They are:
@@ -23,7 +21,6 @@ They are:
 
 
 # Hybrid Recommender
-
 ![workflow.png](https://github.com/kammybdeng/travel-time-rec/blob/master/images/workflow.png)
 
 ## Jaccard Similarity
