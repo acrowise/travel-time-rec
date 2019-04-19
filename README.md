@@ -54,7 +54,7 @@ To run the model and the website in your local computer, you can:
 
   - **5) copy and paste the local website link to your browser**
 
-  - **5) answer the two questions and see your result!**
+  - **6) answer the two questions and see your result!**
 
 
 ## Technical details
