@@ -21,7 +21,7 @@ They are:
 
 # Model
 ## Hybrid Recommender
-![workflow.png](https://github.com/kammybdeng/travel-time-rec/blob/master/images/workflow.png)
+![workflow.png](https://github.com/kammybdeng/travel-time-rec/blob/master/images/model-structure.png)
 
 Like most of the recommenders, this model was trained with the dataset and will analyze new traveler's personality and preferences and find the most matching old users's reviews and ratings, and recommend the matching cities.
 In order to provide a more specific recommendation, I also clustered the cities into four different groups.
