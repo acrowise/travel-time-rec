@@ -1,0 +1,7 @@
+# requirements.txt
+
+Flask==0.12.2
+pyspark==2.3.0
+python==3.6.4
+numpy==1.14.3
+pandas==0.23.4
