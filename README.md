@@ -56,7 +56,7 @@ To run the model and the website in your local computer, you can:
   ```
   4. run the website
   ```
-  python python webapp/server.py
+  python webapp/server.py
   ```
 
   5. copy and paste the local website link to your browser
