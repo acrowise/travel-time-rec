@@ -40,27 +40,26 @@ Categorize the cities into four different groups
 # Get your own recommendation!
 To run the model and the website in your local computer, you can:
 
-  - **1) prepare your environment with requirements.txt**
+  1. prepare your environment with requirements.txt
   ```
   pip install -r requirements.txt
   ```
 
-  - **2) run the model**
+  2. run the model
   ```
   python src/spark_model.py
   ```
 
-  - **3) save up the model**
+  3. save up the model
   ```
   python src/pickle_model.py
   ```
-  - **4) run the website**
+  4. run the website
   ```
   python python webapp/server.py
   ```
-  in your browser:
 
-  - **5) copy and paste the local website link to your browser**
+  5. copy and paste the local website link to your browser
 
 
 ## Technical details
