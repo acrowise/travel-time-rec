@@ -63,7 +63,7 @@ To run the model and the website in your local computer, you can:
 
 
 ## Technical details
-For people who want to learn more about how ALS Collaborative Filtering does.
+For people who want to learn more about ALS Collaborative Filtering.
 
 ### 1. ALS Collaborative Filtering Recommender
 The PySpark's ALS model starts with a sparse utility matrix with items listed on the x axis and users listed on the y axis. The utility matrix will then break into two smaller U, V matrixes. These two small, dense matrixes (often with reduced rank) will then combined to reform a new, dense utility matrix with filled in predicted ratings.
@@ -77,4 +77,4 @@ The final predicted rating of my model is an addition of the alpha times the ALS
 Besides accuracy, I also want to personalize the recommendation. Therefore, I used k-Means clustering on the vectorized TFIDF city reviews to create distinct city groups.
 
 ### 4. Travel Class Model
-Finally, a class model is generated to combine the clusters and the city rating predictions together. The model is represented by the diagram below.
+Finally, a class model is generated to combine the clusters and the city rating predictions together. The model is represented by the diagram above.
